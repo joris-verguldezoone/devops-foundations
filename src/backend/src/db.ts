@@ -11,4 +11,4 @@ export const pool = new Pool({
   port: Number(process.env.DB_PORT) || 5432
 });
 
-pool.on("connect", () => console.log("✅ Connected to PostgreSQL"));
+pool.on("connect", () => console.log("Connected to PostgreSQL"));
