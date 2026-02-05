@@ -11,6 +11,7 @@ export const signup = async (email: string, password: string): Promise<Omit<User
     "INSERT INTO users(email, password) VALUES($1, $2) RETURNING id, email",
     [email, hashedPassword]
   );
+  console.log(result,'test ')
   return result.rows[0];
 };
 

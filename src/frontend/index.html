@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Connexion / Inscription</title>
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="./index.css">
 </head>
 <body>
 
@@ -15,19 +15,19 @@
       <input type="email" name="email" placeholder="Email" required>
       <input type="password" name="password" placeholder="Mot de passe" required>
       <input type="password" name="confirm_password" placeholder="Confirmer mot de passe" required>
-      <input type="submit" value="S'inscrire">
+      <input type="button" id="signup-button" value="S'inscrire">
       <p>Vous avez déjà un compte ? <span class="link" id="toSignin">Se connecter</span></p>
     </form>
 
     <form id="signin" class="form">
       <input type="email" name="email" placeholder="Email" required>
       <input type="password" name="password" placeholder="Mot de passe" required>
-      <input type="submit" value="Se connecter">
+      <input type="submit" id="signin-button" value="Se connecter">
       <p>Pas de compte ? <span class="link" id="toSignup">S'inscrire</span></p>
     </form>
-
+    <p id="error-msg"></p>
   </div>
 
-  <script src="index.js"></script>
+  <script src="./index.js"></script>
 </body>
 </html>

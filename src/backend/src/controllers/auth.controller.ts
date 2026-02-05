@@ -7,6 +7,7 @@ export const signup = async (req: Request, res: Response) => {
   if (!email || !password) return res.status(400).json({ error: "Missing fields" });
 
   try {
+    console.log('signup')
     const user = await authService.signup(email, password);
     res.json(user);
   } catch (err) {
