@@ -2,18 +2,24 @@ import express from "express";
 import dotenv from "dotenv";
 import authRoutes from "./routes/auth";
 import path from "path";
+import cors from 'cors';
+
+
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, "../../frontend")));
+app.use(cors({
+  origin: 'http://localhost:3010',
+  credentials: true
+}));
 
-console.log( path.join(__dirname, "../../frontend/index.html"), 'cc' )
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../../frontend/index.html"));
+  res.send("hello world");
+  
 });
 
 app.use("/auth", authRoutes);
