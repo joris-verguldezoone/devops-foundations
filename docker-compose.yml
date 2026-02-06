@@ -1,5 +1,12 @@
 services:
 
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+
   db:
     image: postgres:18
     restart: always
@@ -10,12 +17,24 @@ services:
       POSTGRES_DB: devops-foundations
     volumes:
      - db-data:/var/lib/postgresql
+     - ./db/init:/docker-entrypoint-initdb.d 
 
-  adminer:
-    image: adminer
-    restart: always
+
+  # adminer:
+  #   image: adminer
+  #   restart: always
+  #   ports:
+  #     - 8080:8080
+
+  node-api:
+    build: ./src/backend
     ports:
-      - 8080:8080
+      - 3000:3000
+
+  frontend: 
+    build: ./src/frontend
+    ports:
+      - 3010:80 # 80 pour exposer le port http en interne de nginx
 
 volumes: 
   db-data:

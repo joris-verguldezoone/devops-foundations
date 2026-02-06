@@ -2,11 +2,13 @@ import { Request, Response } from "express";
 import * as authService from "../services/auth.service";
 
 export const signup = async (req: Request, res: Response) => {
+  console.log(req, req.body,'tonpere')
   const { email, password } = req.body;
 
   if (!email || !password) return res.status(400).json({ error: "Missing fields" });
 
   try {
+    console.log('signup')
     const user = await authService.signup(email, password);
     res.json(user);
   } catch (err) {

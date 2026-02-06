@@ -37,7 +37,7 @@ sur GitHub.
 | Type     | Convention de nommage        | Usage |
 |--------|------------------------------|------|
 | Feature | `feature/nom-fonctionnalite` | Nouvelle fonctionnalité |
-| Bugfix  | `bugfix/nom-du-bug`          | Correction de bug |
+| Fix  | `bugfix/nom-du-bug`          | Correction de bug |
 | Release | `release/x.y.z`              | Préparation d’une release |
 | Hotfix  | `hotfix/urgent`              | Correctif rapide en production |
 
